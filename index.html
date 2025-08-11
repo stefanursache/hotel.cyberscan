@@ -3,147 +3,118 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Protect Your Hotel from Account Takeover | Free Cyber Exposure Scan</title>
-  <meta name="description" content="We secure hotel booking systems and guest data. Start with a free cyber exposure scan today—no strings attached. Same‑day remediation with a money‑back guarantee." />
+  <title>Astro Space Security — Hotel ATO Protection & Cyber Exposure Scans</title>
+  <meta name="description" content="A boutique security team focused on protecting hotels from account takeover (ATO), fraud, and data exposure. Free exposure scan, transparent methodology, and same‑day remediation with a satisfaction guarantee." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#0b1220;--fg:#eaf2ff;--muted:#b8c4e0;--primary:#4f8dff;--accent:#00e5a8;--card:#0f1a30;--border:rgba(255,255,255,.09);
-      --radius:18px; --shadow:0 10px 20px rgba(79,141,255,.35);
-      --space-1:8px; --space-2:12px; --space-3:16px; --space-4:20px; --space-5:28px; --space-6:40px;
-      --container:1100px;
+      --bg:#0b1220;--bg-soft:#0f1a30;--fg:#eaf2ff;--muted:#aab6d6;--primary:#4f8dff;--accent:#00e5a8;--warning:#ffd166;--border:rgba(255,255,255,.10);
+      --radius:18px;--radius-sm:12px;--shadow:0 10px 22px rgba(79,141,255,.28);
+      --space-1:8px;--space-2:12px;--space-3:16px;--space-4:20px;--space-5:28px;--space-6:40px;--space-7:56px;
+      --container:1120px;
     }
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
-      margin:0;
-      font-family:Inter,system-ui,Segoe UI,Roboto,Arial;
-      line-height:1.6;
+      margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial;line-height:1.6;color:var(--fg);
       background:
-        radial-gradient(900px 600px at 85% -10%, rgba(79,141,255,.22), transparent 60%),
-        radial-gradient(700px 500px at -10% 10%, rgba(0,229,168,.16), transparent 40%),
+        radial-gradient(900px 600px at 85% -10%, rgba(79,141,255,.20), transparent 60%),
+        radial-gradient(700px 500px at -10% 10%, rgba(0,229,168,.12), transparent 40%),
         var(--bg);
-      color:var(--fg);
-      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+      -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
     }
-    a{color:var(--primary); text-underline-offset:2px}
-    img{max-width:100%; height:auto; display:block}
+    a{color:var(--primary);text-underline-offset:2px}
+    code, pre{font-family:"JetBrains Mono", ui-monospace, Menlo, Consolas, monospace}
+    img{max-width:100%;height:auto;display:block}
 
-    /* Utilities */
-    .container{max-width:var(--container); margin:0 auto; padding:calc(env(safe-area-inset-top) + var(--space-4)) var(--space-4) var(--space-5)}
+    .container{max-width:var(--container);margin:0 auto;padding:calc(env(safe-area-inset-top) + var(--space-4)) var(--space-4) var(--space-5)}
     .container--tight{padding-top:var(--space-3)}
-    .grid{display:grid; gap:var(--space-4)}
-    .card{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02)); border:1px solid var(--border); border-radius:var(--radius); padding:var(--space-4)}
+    .grid{display:grid;gap:var(--space-4)}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid var(--border);border-radius:var(--radius);padding:var(--space-4)}
     .muted{color:var(--muted)}
-    .pill{display:inline-block;border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:6px 12px;color:var(--muted);font-size:.75rem}
+    .pill{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:6px 12px;color:var(--muted);font-size:.75rem;white-space:nowrap}
 
-    /* Typography */
-    h1{margin:.2em 0 .15em; font-weight:800; letter-spacing:.2px; font-size:clamp(1.7rem, 4.5vw, 3rem); line-height:1.15}
-    h2{margin:0 0 .25em; font-weight:800; font-size:clamp(1.25rem, 3.5vw, 2rem)}
-    h3{margin:0 0 .35em; font-weight:700; font-size:clamp(1rem, 2.8vw, 1.25rem)}
+    h1{margin:.2em 0 .15em;font-weight:800;letter-spacing:.2px;font-size:clamp(1.9rem, 4.8vw, 3.2rem);line-height:1.12}
+    h2{margin:0 0 .25em;font-weight:800;font-size:clamp(1.25rem,3.2vw,2rem)}
+    h3{margin:0 0 .35em;font-weight:700;font-size:clamp(1rem, 2.6vw, 1.25rem)}
 
-    /* Buttons */
-    .btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; border-radius:12px; padding:14px 18px; font-weight:700; text-decoration:none; min-height:48px}
-    .btn:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
-    .btn.primary{background:linear-gradient(135deg,var(--primary),#6aa7ff); color:#fff; box-shadow:var(--shadow)}
-    .btn.ghost{border:1px solid rgba(255,255,255,.18); color:var(--fg); background:transparent}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:12px;padding:14px 18px;font-weight:700;text-decoration:none;min-height:48px}
+    .btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+    .btn.primary{background:linear-gradient(135deg,var(--primary),#6aa7ff);color:#fff;box-shadow:var(--shadow)}
+    .btn.ghost{border:1px solid rgba(255,255,255,.18);color:var(--fg);background:transparent}
 
-    /* Header / Nav */
-    .skip-link{position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden}
-    .skip-link:focus{left:var(--space-4); top:var(--space-4); width:auto; height:auto; padding:10px 12px; background:#000; color:#fff; border-radius:10px; z-index:9999}
-    header{position:sticky; top:0; z-index:10; background:rgba(11,18,32,.7); backdrop-filter:blur(8px); border-bottom:1px solid rgba(255,255,255,.08)}
-    .nav{display:flex; align-items:center; justify-content:space-between; gap:12px}
-    .brand-link{display:flex; align-items:center; gap:10px; text-decoration:none; color:inherit; min-height:48px}
-    .logo{width:36px; height:36px; border-radius:10px; background:conic-gradient(from 210deg,var(--primary),var(--accent),var(--primary)); display:grid; place-items:center; flex-shrink:0}
-    .brand-text{font-weight:800; letter-spacing:.2px; white-space:nowrap}
+    .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+    .skip-link:focus{left:var(--space-4);top:var(--space-4);width:auto;height:auto;padding:10px 12px;background:#000;color:#fff;border-radius:10px;z-index:9999}
 
-    /* Mobile-first nav using details */
-    .menu{display:flex; align-items:center; gap:10px}
+    header{position:sticky;top:0;z-index:20;background:rgba(11,18,32,.7);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.08)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit;min-height:48px}
+    .logo{width:36px;height:36px;border-radius:10px;background:conic-gradient(from 210deg,var(--primary),var(--accent),var(--primary));display:grid;place-items:center;flex-shrink:0}
+    .brand b{font-weight:800;letter-spacing:.2px;white-space:nowrap}
+
+    .menu{display:flex;align-items:center;gap:10px}
     .menu details{position:relative}
-    .menu summary{list-style:none; cursor:pointer}
+    .menu summary{list-style:none;cursor:pointer}
     .menu summary::-webkit-details-marker{display:none}
-    .menu .panel{
-      position:absolute; right:0; top:calc(100% + 8px);
-      background:rgba(15,26,48,.98); border:1px solid var(--border); border-radius:14px;
-      padding:10px; min-width:230px;
-    }
-    .menu a{display:block; padding:10px 12px; border-radius:10px}
+    .menu .panel{position:absolute;right:0;top:calc(100% + 8px);background:rgba(15,26,48,.98);border:1px solid var(--border);border-radius:14px;padding:10px;min-width:230px}
+    .menu a{display:block;padding:10px 12px;border-radius:10px}
     .menu a:hover{background:rgba(255,255,255,.06)}
-    @media (min-width:860px){
-      .menu details{display:none}
-      .menu .links{display:flex; gap:10px; flex-wrap:wrap}
-    }
-    @media (max-width:859.98px){
-      .menu .links{display:none}
-    }
+    @media (min-width:880px){.menu details{display:none}.menu .links{display:flex;gap:10px;flex-wrap:wrap}}
+    @media (max-width:879.98px){.menu .links{display:none}}
 
-    /* Hero */
     .hero{padding-top:var(--space-5)}
-    .stats{display:grid; gap:12px; grid-template-columns:repeat(2,1fr)}
-    .stat{background:rgba(255,255,255,.05); border:1px solid var(--border); border-radius:16px; padding:16px; text-align:center}
-    .stat b{display:block; font-size:1.2rem}
-    @media (min-width:900px){
-      .grid-2{grid-template-columns:1.05fr .95fr}
-      .stats{grid-template-columns:repeat(4,1fr)}
-    }
+    .stats{display:grid;gap:12px;grid-template-columns:repeat(2,1fr)}
+    .stat{background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:16px;padding:16px;text-align:center}
+    .stat b{display:block;font-size:1.2rem}
+    @media (min-width:960px){.grid-2{grid-template-columns:1.05fr .95fr}.stats{grid-template-columns:repeat(4,1fr)}}
 
-    /* Sections */
     .section{padding:var(--space-6) var(--space-4)}
-    .features{display:grid; gap:16px}
-    @media (min-width:900px){ .features{grid-template-columns:repeat(3,1fr)} }
+    .features{display:grid;gap:16px}
+    @media (min-width:960px){.features{grid-template-columns:repeat(3,1fr)}}
 
-    /* Responsive iframe card */
-    .embed{
-      overflow:hidden; border-radius:14px; border:1px solid var(--border);
-      background:rgba(255,255,255,.05);
-    }
-    .embed iframe{
-      display:block; width:100%; height:min(75vh, 820px); min-height:520px; border:0;
-    }
-    @media (max-width:480px){
-      .embed iframe{min-height:520px; height:70vh}
-    }
+    /* v2: refined checklist badges */
+    .list{display:grid;gap:12px;margin:0;padding:0;list-style:none}
+    .list li{display:flex;gap:12px;align-items:flex-start}
+    .check{width:22px;height:22px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;color:#051b14;font-weight:800;box-shadow:0 0 0 2px rgba(0,0,0,.10) inset}
+    .check::before{content:"✓";color:#fff;font-size:14px;line-height:1}
 
-    /* Footer */
-    footer{padding:var(--space-6) var(--space-4); color:var(--muted); border-top:1px solid rgba(255,255,255,.08)}
-    .footer-grid{display:flex; gap:14px; justify-content:space-between; align-items:center; flex-wrap:wrap}
+    .two-col{display:grid;gap:16px}
+    @media (min-width:900px){.two-col{grid-template-columns:1fr 1fr}}
 
-    /* Prefers-reduced-motion */
-    @media (prefers-reduced-motion: reduce){
-      *{scroll-behavior:auto}
-    }
+    .embed{overflow:hidden;border-radius:14px;border:1px solid var(--border);background:rgba(255,255,255,.05)}
+    .embed iframe{display:block;width:100%;height:min(75vh, 820px);min-height:520px;border:0}
 
-    /* Improve scrolling to anchors (header offset) */
+    footer{padding:var(--space-6) var(--space-4);color:var(--muted);border-top:1px solid rgba(255,255,255,.08)}
+    .footer-grid{display:grid;gap:12px}
+    @media (min-width:800px){.footer-grid{grid-template-columns:1fr auto;align-items:center}}
+
     :target{scroll-margin-top:90px}
   </style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-
   <header>
     <div class="container container--tight nav" role="navigation" aria-label="Primary">
-      <a class="brand-link" href="#top" aria-label="Astro Space Security — Home">
+      <a class="brand" href="#top" aria-label="Astro Space Security — Home">
         <span class="logo" aria-hidden="true"></span>
-        <span class="brand-text">Astro Space Security</span>
+        <b>Astro Space Security</b>
       </a>
-
       <div class="menu">
-        <!-- Desktop links -->
         <nav class="links" aria-label="Primary links">
-          <a class="btn ghost" href="#how">How it works</a>
-          <a class="btn ghost" href="#proof">Proof</a>
-          <a class="btn primary" href="#form">Get Free Scan</a>
+          <a class="btn ghost" href="#services">Services</a>
+          <a class="btn ghost" href="#method">Methodology</a>
+          <a class="btn ghost" href="#consult">Book a Call</a>
+          <a class="btn primary" href="#form">Free Scan</a>
         </nav>
-
-        <!-- Mobile menu (details/summary, no JS) -->
         <details>
           <summary class="btn ghost" aria-label="Open menu">Menu</summary>
           <div class="panel" role="menu">
-            <a role="menuitem" href="#how">How it works</a>
-            <a role="menuitem" href="#proof">Proof</a>
-            <a role="menuitem" class="btn primary" href="#form" style="margin-top:6px">Get Free Scan</a>
+            <a role="menuitem" href="#services">Services</a>
+            <a role="menuitem" href="#method">Methodology</a>
+            <a role="menuitem" href="#consult">Book a Call</a>
+            <a role="menuitem" class="btn primary" href="#form" style="margin-top:6px">Free Scan</a>
           </div>
         </details>
       </div>
@@ -151,14 +122,14 @@
   </header>
 
   <main id="main">
-    <section class="hero container grid grid-2" id="top">
+    <section class="container hero grid grid-2" id="top">
       <div class="card">
-        <span class="pill">Hotels Only • Same‑Day Remediation</span>
-        <h1>Protect Your Hotel From Hackers Before It’s Too Late</h1>
-        <p class="muted">We secure hotel booking systems and guest data. Start with a <strong>free cyber exposure scan</strong> — no strings attached. If you’re not satisfied with the fix, <strong>you don’t pay</strong>.</p>
-        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:12px">
-          <a class="btn primary" href="#form" aria-label="Get your free scan">Get Your Free Scan</a>
-          <a class="btn ghost" href="#proof">See what we find</a>
+        <span class="pill">Hotels • ATO Prevention • Same‑Day Remediation</span>
+        <h1>Stop Account Takeover Before It Hits Your Guests</h1>
+        <p class="muted">We help hotel brands prevent account takeover (ATO), booking fraud, and guest‑phishing. Start with a <strong>free cyber exposure scan</strong>; we show evidence before any engagement. Not satisfied with the fix? <strong>You don’t pay.</strong></p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a class="btn primary" href="#form" aria-label="Get your free scan">Get Free Scan</a>
+          <a class="btn ghost" href="#consult">Book a Call</a>
         </div>
         <div class="stats" style="margin-top:18px">
           <div class="stat"><b>72 hrs</b><span class="muted">Typical abuse window after a leak</span></div>
@@ -167,55 +138,69 @@
           <div class="stat"><b>Money‑back</b><span class="muted">Satisfaction guarantee</span></div>
         </div>
       </div>
-
       <div class="card" id="form" aria-labelledby="form-title">
-        <h2 id="form-title">Free Hotel Cyber Exposure Scan</h2>
-        <p class="muted">We’ll run a preliminary open‑source scan on your domain and return a one‑page report with evidence.</p>
-        <!-- Replace FORM_ID with your actual Google Form ID -->
+        <h2 id="form-title">Free Cyber Exposure Scan</h2>
+        <p class="muted">We run an open‑source, non‑intrusive scan on your primary domain and deliver a one‑page summary with evidence.</p>
         <div class="embed" role="region" aria-label="Free scan form">
+          <!-- Replace FORM_ID with your Google Form ID -->
           <iframe src="https://docs.google.com/forms/d/e/FORM_ID/viewform?embedded=true" loading="lazy" title="Request a free cyber exposure scan"></iframe>
         </div>
         <p class="muted" style="font-size:.85rem;margin-top:8px">By submitting, you agree to be contacted about your security scan. We never sell or share your data.</p>
       </div>
     </section>
 
-    <section id="how" class="section container" aria-labelledby="how-title">
-      <span class="pill">How it works</span>
-      <h2 id="how-title">Three Steps to Lock Down Your Hotel</h2>
-      <div class="features">
+    <section id="services" class="section container" aria-labelledby="services-title">
+      <span class="pill">Services</span>
+      <h2 id="services-title">What We Do — and Deliver</h2>
+      <div class="two-col">
         <div class="card">
-          <h3>1) We scan your exposure</h3>
-          <p class="muted">We check for leaked credentials, domain email protections (SPF/DKIM/DMARC), and outdated systems — using open‑source, non‑intrusive methods.</p>
+          <h3>ATO Risk Reduction for Hotels</h3>
+          <ul class="list">
+            <li><span class="check" aria-hidden="true"></span><span>Exposure scan with redacted breach evidence for <em>@your‑hotel.com</em> identities</span></li>
+            <li><span class="check" aria-hidden="true"></span><span>Domain email defense: SPF, DKIM, DMARC policy with monitoring</span></li>
+            <li><span class="check" aria-hidden="true"></span><span>Booking portal hardening: TLS, headers, bot/abuse controls</span></li>
+            <li><span class="check" aria-hidden="true"></span><span>Staff guidance: password managers, phishing playbook, MFA rollout</span></li>
+          </ul>
         </div>
         <div class="card">
-          <h3>2) We send proof</h3>
-          <p class="muted">You get a one‑page report with redacted evidence. Clear, non‑technical, and focused on guest safety and booking reliability.</p>
-        </div>
-        <div class="card">
-          <h3>3) Same‑day remediation</h3>
-          <p class="muted">We fix critical issues the same day. If you’re not satisfied with the results, you don’t pay.</p>
+          <h3>Deliverables You Can Share Internally</h3>
+          <ul class="list">
+            <li><span class="check" aria-hidden="true"></span><span>One‑page executive summary with risk rating (traffic‑light)</span></li>
+            <li><span class="check" aria-hidden="true"></span><span>Technical appendix with steps taken and configs (change‑controlled)</span></li>
+            <li><span class="check" aria-hidden="true"></span><span>Remediation PRs or config diffs (Git/SaaS)</span></li>
+            <li><span class="check" aria-hidden="true"></span><span>Verification report and next‑steps plan (30/60/90)</span></li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <section id="proof" class="section container" aria-labelledby="proof-title">
-      <span class="pill">What we find</span>
-      <h2 id="proof-title">Evidence We Typically Uncover</h2>
+    <section id="method" class="section container" aria-labelledby="method-title">
+      <span class="pill">Methodology</span>
+      <h2 id="method-title">Evidence‑First, Non‑Intrusive, Standards‑Aligned</h2>
       <div class="features">
         <div class="card">
-          <h3>Leaked Staff Credentials</h3>
-          <p class="muted">Accounts tied to <code>@your-hotel.com</code> appearing in public breach datasets. Attackers reuse these to access booking portals and email guests.</p>
-          <pre class="card" style="overflow:auto; font-size:.9rem; white-space:pre-wrap"><code>user1@your-hotel.com — ******** (2024 breach)
-user2@your-hotel.com — ******** (2023 breach)</code></pre>
+          <h3>Open‑Source Intelligence (OSINT)</h3>
+          <p class="muted">Credential exposure checks, domain reputation, and impersonation risk. No scanning of hotel infrastructure without approval.</p>
         </div>
         <div class="card">
-          <h3>Impersonation‑Resistant Email</h3>
-          <p class="muted">Missing or weak SPF / DKIM / DMARC allows attackers to send emails as your hotel. We configure strong policies to block spoofing.</p>
+          <h3>Email Authentication</h3>
+          <p class="muted">SPF alignment, DKIM signing, strict DMARC, and reporting to shut down spoofing. We ship configs and guide rollout.</p>
         </div>
         <div class="card">
-          <h3>Outdated TLS / Exposed Services</h3>
-          <p class="muted">Legacy configurations on publicly reachable systems increase risk of interception or exploitation. We harden and patch.</p>
+          <h3>Surface Hardening</h3>
+          <p class="muted">TLS versions and ciphers, HSTS, security headers, and basic bot/abuse rate‑limits for booking flows.</p>
         </div>
+      </div>
+    </section>
+
+    <!-- v2: Calendly booking section -->
+    <section id="consult" class="section container" aria-labelledby="consult-title">
+      <span class="pill">Book a Call</span>
+      <h2 id="consult-title">Schedule Your Free Consultation</h2>
+      <p class="muted">Talk directly with our security team about your hotel's exposure and get tailored advice. No obligations, no sales pressure.</p>
+      <div class="embed" role="region" aria-label="Calendly booking">
+        <!-- Replace the URL with your Calendly link, e.g., https://calendly.com/USERNAME/20min -->
+        <iframe src="https://calendly.com/YOUR_USERNAME/20min?hide_event_type_details=1&hide_gdpr_banner=1" title="Book a consulting call"></iframe>
       </div>
     </section>
   </main>
@@ -225,9 +210,9 @@ user2@your-hotel.com — ******** (2023 breach)</code></pre>
       <div style="display:flex;align-items:center;gap:10px">
         <span class="logo" aria-hidden="true"></span><b>Astro Space Security</b>
       </div>
-      <div class="muted">
-        <a href="tel:+40700000000" class="muted" aria-label="Call us">+40 7xx xxx xxx</a> ·
-        <a href="mailto:hello@astrospace.security" class="muted" aria-label="Email us">hello@astrospace.security</a>
+      <div>
+        <div class="muted">hello@astrospace.security · +40 7xx xxx xxx</div>
+        <div class="muted" style="margin-top:6px">RO Company No. 00000000 · Privacy · Terms</div>
       </div>
     </div>
   </footer>
